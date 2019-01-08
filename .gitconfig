@@ -1,0 +1,21 @@
+[user]
+	email = drew.gaynor@genesys.com
+	name = Drew Gaynor
+[push]
+	default = simple
+[alias]
+	changed = show --pretty=\"format:\" --name-only
+	purge = !git branch --merged | egrep -v \"(^\\*|master|develop)\" | xargs git branch -d
+	s = status
+	f = fetch
+	m = merge
+	c = commit
+	p = push
+	co = checkout
+	b = branch
+	ca = commit -a --amend
+	cn = commit -a --no-edit
+	can = commit -a --amend --no-edit
+        branch-name = !git rev-parse --abbrev-ref HEAD
+	pu = !git push -u origin $(git branch-name)
+	alias = config --get-regexp ^alias\\.
